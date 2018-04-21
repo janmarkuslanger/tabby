@@ -46,6 +46,6 @@ Include the tabs.js and tabs.css into your project.
   </div>
 ```
 
-Here is a demo.
+Here is a <a href="https://janmarkuslanger.github.io/tabsjs/">demo</a>.
 
 
