@@ -1,18 +1,20 @@
+<p text-align="center"><img src="./assets/tags.gif" alt="Tags Demo"></p>
+
 # tabsjs
 📂 Minimalistic Vanilla JS Tabs written in ES6.
 
 - 37 lines of javascript
 - 6 lines of css
 
-## Setup 
+## Setup
 
-Include the tabs.js and tabs.css into your project. 
+Include the tabs.js and tabs.css into your project.
 
 ``` javascript
 // into the <head>
 <link rel="stylesheet" href="tabs.css">
 
-// before the closing body tag 
+// before the closing body tag
 <script src="tabs.js"></script>
 ```
 
@@ -20,7 +22,7 @@ Include the tabs.js and tabs.css into your project.
 
 ``` html
 
-// wrap every container with a data-tabs 
+// wrap every container with a data-tabs
 <div data-tabs>
 
     <div class="bar">
@@ -47,15 +49,13 @@ Include the tabs.js and tabs.css into your project.
 
 
   </div>
-    
+
     <script src="tabs.js"></script>
     <script>
-        // init 
+        // init
         Tabs.init()
     </script>
 
 ```
 
 Here is a <a href="https://janmarkuslanger.github.io/tabsjs/">demo</a>.
-
-
