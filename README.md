@@ -1,4 +1,4 @@
-<p text-align="center"><img src="/assets/tags.gif" alt="Tags Demo"></p>
+<p text-align="center"><img src="/assets/tabs.gif" alt="Tags Demo"></p>
 
 # tabsjs
 📂 Minimalistic Vanilla JS Tabs written in ES6.
