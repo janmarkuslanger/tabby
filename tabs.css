@@ -1,22 +1,6 @@
-[data-tabs] {
-  display: inline-block;
-  font-family: 'Titillium Web', sans-serif;
-  background-color: rgba(229, 229, 229, .5);
-}
-[data-tabs] .bar {
-  display: flex;
-  border-bottom: 0.0625rem solid rgba(54, 54, 54, .6);
-}
-[data-tabs] [data-tabs-item] {
-  flex: 1;
-  padding: 1.25rem;
-  text-align: center;
-  border-right: 0.0625rem solid rgba(54, 54, 54, .6);
-  cursor: pointer;
-}
-[data-tabs] [data-tabs-item]:last-child {
-  border-right-color: transparent;
-}
 [data-tabs] [data-tabs-content] {
   display: none;
+}
+[data-tabs] [data-tabs-content][data-tabs-active] {
+  display: block;
 }

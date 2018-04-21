@@ -5,6 +5,37 @@
     <title></title>
     <link rel="stylesheet" href="tabs.css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet">
+    <style>
+
+    [data-tabs] {
+      display: inline-block;
+      font-family: 'Titillium Web', sans-serif;
+      background-color: rgba(229, 229, 229, .5);
+      width: 400px;
+      margin: 0 auto;
+    }
+    [data-tabs] .bar {
+      display: flex;
+      border-bottom: 0.0625rem solid rgba(54, 54, 54, .6);
+    }
+    [data-tabs] [data-tabs-item] {
+      flex: 1;
+      padding: 1.25rem;
+      text-align: center;
+      border-right: 0.0625rem solid rgba(54, 54, 54, .6);
+      cursor: pointer;
+    }
+    [data-tabs] [data-tabs-content] {
+      padding: 0.625rem;
+    }
+    [data-tabs] [data-tabs-item][data-tabs-active] {
+      background-color: rgba(54, 54, 54, .2)
+    }
+    [data-tabs] [data-tabs-item]:last-child {
+      border-right-color: transparent;
+    }
+
+    </style>
   </head>
   <body>
 
@@ -13,8 +44,8 @@
 
       <div class="bar">
 
-        <div data-tabs-item="1" data-active>1</div>
-        <div data-tabs-item="2">2</div>
+        <div data-tabs-item="1" data-tabs-active>1</div>
+        <div data-tabs-item="car">2</div>
         <div data-tabs-item="3">3</div>
         <div data-tabs-item="4">4</div>
 
@@ -23,17 +54,22 @@
 
       <div class="content">
 
-        <div data-tabs-content="1">1111111111111111</div>
-        <div data-tabs-content="2">2222222222222222</div>
-        <div data-tabs-content="3">3333333333333333</div>
-        <div data-tabs-content="4">4444444444444444</div>
-
+        <div data-tabs-content="1" data-tabs-active>This is pretty cool, isn´t it?</div>
+        <div data-tabs-content="car">just 37 lines of js and 6 lines of css</div>
+        <div data-tabs-content="3">written in ES6</div>
+        <div data-tabs-content="4">WOW</div>
       </div>
 
 
     </div>
 
     <script src="tabs.js"></script>
+
+    <script>
+
+      Tabs.init()
+
+    </script>
 
   </body>
 </html>
