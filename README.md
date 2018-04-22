@@ -3,7 +3,7 @@
 # tabsjs
 📂 Minimalistic Vanilla JS Tabs written in ES6.
 
-- 37 lines of javascript
+- 34 lines of javascript 
 - 6 lines of css
 
 ## Setup

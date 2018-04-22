@@ -2,8 +2,7 @@ const Tabs = (function(){
 
   const showTab = function showTab (item, module) {
     const activeItems = [].slice.call(document.querySelectorAll('[data-tabs-active]'));
-    activeItems[0].removeAttribute('data-tabs-active');
-    activeItems[1].removeAttribute('data-tabs-active');
+    activeItems.forEach(item => { item.removeAttribute('data-tabs-active') })
     item.setAttribute('data-tabs-active', '');
     module.querySelector(`[data-tabs-content="${item.getAttribute('data-tabs-item')}"]`).setAttribute('data-tabs-active', '');
   }
@@ -25,9 +24,7 @@ const Tabs = (function(){
     if(modules.length === 0) {
       return;
     }
-    modules.forEach(function(module){
-      initModule(module);
-    });
+    modules.forEach(module => { initModule(module); });
   }
 
   return {
