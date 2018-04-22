@@ -4,6 +4,7 @@ const Tabs = (function(){
     const activeItems = [].slice.call(document.querySelectorAll('[data-tabs-active]'));
     activeItems[0].removeAttribute('data-tabs-active');
     activeItems[1].removeAttribute('data-tabs-active');
+     item.setAttribute('data-tabs-active', '');
     module.querySelector(`[data-tabs-content="${item.getAttribute('data-tabs-item')}"]`).setAttribute('data-tabs-active', '');
   }
 
