@@ -1,7 +1,7 @@
 const Tabs = (function(){
 
   const showTab = function showTab (item, module) {
-    const activeItems = [].slice.call(document.querySelectorAll('[data-tabs-active]'));
+    const activeItems = [].slice.call(module.querySelectorAll('[data-tabs-active]'));
     activeItems.forEach(item => { item.removeAttribute('data-tabs-active') })
     item.setAttribute('data-tabs-active', '');
     module.querySelector(`[data-tabs-content="${item.getAttribute('data-tabs-item')}"]`).setAttribute('data-tabs-active', '');
