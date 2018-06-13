@@ -12,7 +12,7 @@ Include the tabs.js and tabs.css into your project.
 <link rel="stylesheet" href="tabs.css">
 
 // before the closing body tag
-<script src="tabs.js"></script>
+<script src="tabs.min.js"></script>
 ```
 
 ## Usage
