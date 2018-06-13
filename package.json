@@ -1,0 +1,25 @@
+{
+  "name": "tabsjs",
+  "version": "1.0.0",
+  "description": "A tiny tabs plugin.",
+  "main": "tabs.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.4.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janmarkuslanger/tabsjs.git"
+  },
+  "author": "Jan-Markus Langer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/janmarkuslanger/tabsjs/issues"
+  },
+  "homepage": "https://github.com/janmarkuslanger/tabsjs#readme"
+}
