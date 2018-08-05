@@ -1,0 +1,12 @@
+{
+  parser: "babel-eslint",
+  "rules": {
+     "max-len": [1, 70, 2, {ignoreComments: true}],
+     "linebreak-style": 0,
+     "import/prefer-default-export": false
+  },
+  "extends": ["airbnb-base"],
+  "env": {
+    "browser": true
+  }
+}
