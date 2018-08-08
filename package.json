@@ -1,5 +1,5 @@
 {
-  "name": "tabsjs",
+  "name": "@janmarkuslanger/tabsjs",
   "version": "1.0.0",
   "description": "A tiny tabs plugin.",
   "main": "dist/npm tabs.js",
