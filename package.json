@@ -1,8 +1,8 @@
 {
-  "name": "@janmarkuslanger/tabsjs",
-  "version": "1.0.0",
+  "name": "tabsjs-lib",
+  "version": "1.0.1",
   "description": "A tiny tabs plugin.",
-  "main": "dist/npm tabs.js",
+  "main": "dist/tabs.js",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
