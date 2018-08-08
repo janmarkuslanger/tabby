@@ -2,7 +2,7 @@
   "name": "tabsjs",
   "version": "1.0.0",
   "description": "A tiny tabs plugin.",
-  "main": "tabs.js",
+  "main": "dist/npm tabs.js",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
