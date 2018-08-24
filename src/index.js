@@ -14,39 +14,39 @@
 const nodeToArray = nodeList => [].slice.call(nodeList);
 
 /**
-  * Tabs Attribute
-  *
-  * @type {String}
-  */
-const ATTRIBUTE_TABS = 'data-tabs';
-
-/**
   * Active Tabs Attribute
   *
   * @type {String}
   */
-const ATTRIBUTE_ACTIVE = 'data-tabs-active';
+const ATTRIBUTE_ACTIVE = 'data-tabby-active';
 
 /**
   * Bar Tabs Attribute
   *
   * @type {String}
   */
-const ATTRIBUTE_BAR = 'data-tabs-bar';
+const ATTRIBUTE_BAR = 'data-tabby-bar';
 
 /**
   * Content Tabs Attribute
   *
   * @type {String}
   */
-const ATTRIBUTE_CONTENT = 'data-tabs-content';
+const ATTRIBUTE_CONTENT = 'data-tabby-content';
+
+/**
+  * version
+  *
+  * @type {String}
+  */
+export const version = '[AIV]{version}[/AIV]';
 
 /**
   * Tabs
   *
   * @type {Class}
   */
-class Tabs {
+export class Component {
   /**
     * constructor
     *
@@ -54,6 +54,7 @@ class Tabs {
     */
   constructor(container, hooks) {
     this.container = container;
+    this.hooks = hooks;
 
     if (!this.container) {
       console.error('Container is not given!');
@@ -63,10 +64,10 @@ class Tabs {
     this.activeBar = this.container.querySelector(`[${ATTRIBUTE_BAR}]`);
     this.activeContent = this.container.querySelector(`[${ATTRIBUTE_CONTENT}]`);
     this.barItems = nodeToArray(
-      this.container.querySelectorAll(`[${ATTRIBUTE_BAR}]`)
+      this.container.querySelectorAll(`[${ATTRIBUTE_BAR}]`),
     );
-    if (hooks.onContruct) {
-      hooks.onContruct(this);
+    if (this.hooks.onConstruct) {
+      this.hooks.onConstruct(this);
     }
     this.initTabs(this.container);
   }
@@ -76,6 +77,9 @@ class Tabs {
     *
     */
   killActiveTab() {
+    if (this.hooks.onBeforeKilltabs) {
+      this.hooks.onBeforeKilltabs(this, this.activeBar, this.activeContent);
+    }
 
     if (this.activeBar) {
       this.activeBar.removeAttribute(ATTRIBUTE_ACTIVE);
@@ -83,10 +87,13 @@ class Tabs {
     }
 
     if (this.activeContent) {
-      this.activeContent.removeAttribute(ATTRIBUTE_CONTENT);
+      this.activeContent.removeAttribute(ATTRIBUTE_ACTIVE);
       this.activeContent = null;
     }
 
+    if (this.hooks.onAfterKilltabs) {
+      this.hooks.onAfterKilltabs(this, this.activeBar, this.activeContent);
+    }
   }
 
   /**
@@ -95,12 +102,19 @@ class Tabs {
     * @param {HTMLElement}
     */
   showTab(item) {
-
     this.activeBar = item;
     this.activeContent = this.container.querySelector(`[${ATTRIBUTE_CONTENT}="${this.activeBar.getAttribute(ATTRIBUTE_BAR)}"]`);
 
+    if (this.hooks.onBeforeShowtabs) {
+      this.hooks.onBeforeShowtabs(this, this.activeBar, this.activeContent);
+    }
+
     this.activeBar.setAttribute(ATTRIBUTE_ACTIVE, '');
     this.activeContent.setAttribute(ATTRIBUTE_ACTIVE, '');
+
+    if (this.hooks.onAfterShowtabs) {
+      this.hooks.onAfterShowtabs(this, this.activeBar, this.activeContent);
+    }
   }
 
   /**
@@ -108,6 +122,9 @@ class Tabs {
     *
     */
   initTabs() {
+    if (this.hooks.onBeforeInit) {
+      this.hooks.onBeforeInit(this);
+    }
     this.barItems.forEach((item) => {
       item.addEventListener('click', () => {
         if (item === this.activeBar) {
@@ -117,6 +134,9 @@ class Tabs {
         this.showTab(item);
       });
     });
-  }
 
+    if (this.hooks.onAfterInit) {
+      this.hooks.onAfterInit(this);
+    }
+  }
 }

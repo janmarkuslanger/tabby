@@ -21,7 +21,9 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   output: {
-   filename: 'tabs.js',
-   path: path.resolve(__dirname, './dist')
-},
+    library: 'Tabby',
+    libraryTarget: 'umd',
+    filename: 'tabby.js',
+    path: path.resolve(__dirname, './dist')
+  },
 };

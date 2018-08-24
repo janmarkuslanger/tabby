@@ -3,44 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="dist/tabs.css">
+    <link rel="stylesheet" href="dist/tabby.css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet">
     <style>
 
-    body {
-      padding: 5rem;
-    }
-    [data-tabs] {
-      display: block;
-      font-family: 'Titillium Web', sans-serif;
-      background-color: rgba(229, 229, 229, .5);
-      width: 400px;
-      margin: 0 auto;
-      border-radius: 0.25rem;
-    }
-    [data-tabs] .bar {
-      display: flex;
-      border-bottom: 0.0625rem solid rgba(54, 54, 54, .6);
-    }
-    [data-tabs] [data-tabs-bar] {
-      flex: 1;
-      padding: 1.25rem;
-      text-align: center;
-      border-right: 0.0625rem solid rgba(54, 54, 54, .6);
-      cursor: pointer;
-    }
-    [data-tabs] [data-tabs-content] {
-      padding: 0.625rem;
-    }
-    [data-tabs] [data-tabs-item][data-tabs-active] {
-      background-color: rgba(54, 54, 54, .2)
-    }
-    [data-tabs] [data-tabs-item]:last-child {
-      border-right-color: transparent;
-    }
 
     </style>
-    <script src="src/index.js"></script>
+    <script src="dist/tabby.js"></script>
   </head>
   <body>
 
@@ -60,13 +29,11 @@
 
 
     <script>
-
-      const myTab = new Tabs(document.querySelector('[data-tabs]'), {
-        onContruct: function(tab) {
-          console.log(tab);
+      const myTab = new Tabby.Component(document.querySelector('[data-tabs]'), {
+        onConstruct: function(tab) {
+          console.log('Hook: onConstruct');
         }
       });
-
     </script>
 
   </body>
