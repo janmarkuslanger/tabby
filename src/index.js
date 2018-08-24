@@ -18,100 +18,105 @@ const nodeToArray = nodeList => [].slice.call(nodeList);
   *
   * @type {String}
   */
-const TABS = 'data-tabs';
+const ATTRIBUTE_TABS = 'data-tabs';
 
 /**
   * Active Tabs Attribute
   *
   * @type {String}
   */
-const ACTIVE = 'data-tabs-active';
+const ATTRIBUTE_ACTIVE = 'data-tabs-active';
 
 /**
-  * Item Tabs Attribute
+  * Bar Tabs Attribute
   *
   * @type {String}
   */
-const ITEM = 'data-tabs-item';
+const ATTRIBUTE_BAR = 'data-tabs-bar';
 
 /**
   * Content Tabs Attribute
   *
   * @type {String}
   */
-const CONTENT = 'data-tabs-content';
+const ATTRIBUTE_CONTENT = 'data-tabs-content';
 
 /**
-  * close active tabs
+  * Tabs
   *
-  * @param {HTMLElement} tabContainer
+  * @type {Class}
   */
-const killActiveTab = (tabContainer) => {
-  // get the active items
-  const activeBar = tabContainer.querySelector(`[${ITEM}][${ACTIVE}]`);
-  const activeItem = tabContainer.querySelector(`[${CONTENT}][${ACTIVE}]`);
+class Tabs {
+  /**
+    * constructor
+    *
+    * @param {HTMLElement} container
+    */
+  constructor(container, hooks) {
+    this.container = container;
 
-  // if there is an active bar item remove the attribute
-  if (activeBar) {
-    activeBar.removeAttribute(ACTIVE);
+    if (!this.container) {
+      console.error('Container is not given!');
+      return;
+    }
+
+    this.activeBar = this.container.querySelector(`[${ATTRIBUTE_BAR}]`);
+    this.activeContent = this.container.querySelector(`[${ATTRIBUTE_CONTENT}]`);
+    this.barItems = nodeToArray(
+      this.container.querySelectorAll(`[${ATTRIBUTE_BAR}]`)
+    );
+    if (hooks.onContruct) {
+      hooks.onContruct(this);
+    }
+    this.initTabs(this.container);
   }
 
-  // if there is an active content item renove the attribute
-  if (activeItem) {
-    activeItem.removeAttribute(ACTIVE);
+  /**
+    * kill Active Tab
+    *
+    */
+  killActiveTab() {
+
+    if (this.activeBar) {
+      this.activeBar.removeAttribute(ATTRIBUTE_ACTIVE);
+      this.activeBar = null;
+    }
+
+    if (this.activeContent) {
+      this.activeContent.removeAttribute(ATTRIBUTE_CONTENT);
+      this.activeContent = null;
+    }
+
   }
-};
 
-/**
-  * activate a Tab Bar
-  *
-  * @param {HTMLElement} item
-  * @param {HTMLElement} tabContainer
-  */
-const showTab = (item, tabContainer) => {
-  // kill the active tab
-  killActiveTab(tabContainer);
+  /**
+    * activate a tab
+    *
+    * @param {HTMLElement}
+    */
+  showTab(item) {
 
-  // set active to the bar and content item
-  item.setAttribute(ACTIVE, '');
-  tabContainer
-    .querySelector(`[${CONTENT}="${item.getAttribute(ITEM)}"]`)
-    .setAttribute(ACTIVE, '');
-};
+    this.activeBar = item;
+    this.activeContent = this.container.querySelector(`[${ATTRIBUTE_CONTENT}="${this.activeBar.getAttribute(ATTRIBUTE_BAR)}"]`);
 
-/**
-  * init the tabs
-  *
-  * @param {HTMLElement} tabContainer
-  */
-const initTabs = (tabContainer) => {
-  // get the bar items
-  const barItems = nodeToArray(tabContainer.querySelectorAll(`[${ITEM}]`));
+    this.activeBar.setAttribute(ATTRIBUTE_ACTIVE, '');
+    this.activeContent.setAttribute(ATTRIBUTE_ACTIVE, '');
+  }
 
-  barItems.forEach((item) => {
-    // add event listener
-    item.addEventListener('click', () => {
-      // the item is already set to active
-      if (item.getAttribute(ACTIVE) !== null) {
-        return;
-      }
-
-      // ativate the tab
-      showTab(item, tabContainer);
+  /**
+    * init Tabs
+    *
+    */
+  initTabs() {
+    this.barItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        if (item === this.activeBar) {
+          return;
+        }
+        this.killActiveTab();
+        this.showTab(item);
+      });
     });
-  });
-};
+  }
 
-/**
-  * init function
-  */
-export const init = () => {
-  // if there is no tabContainer to handle just return
-  if (!document.querySelector(`[${TABS}]`)) { return; }
-
-  // get all the tabContainer in DOM
-  const tabsContainer = nodeToArray(document.querySelectorAll(`[${TABS}]`));
-
-  // init them
-  tabsContainer.forEach((tabContainer) => { initTabs(tabContainer); });
-};
+}

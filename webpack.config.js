@@ -21,8 +21,6 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   output: {
-   library: 'Tabs',
-   libraryTarget: "umd",
    filename: 'tabs.js',
    path: path.resolve(__dirname, './dist')
 },

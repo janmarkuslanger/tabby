@@ -22,7 +22,7 @@
       display: flex;
       border-bottom: 0.0625rem solid rgba(54, 54, 54, .6);
     }
-    [data-tabs] [data-tabs-item] {
+    [data-tabs] [data-tabs-bar] {
       flex: 1;
       padding: 1.25rem;
       text-align: center;
@@ -40,15 +40,16 @@
     }
 
     </style>
+    <script src="src/index.js"></script>
   </head>
   <body>
 
     <div data-tabs>
       <div class="bar">
-        <div data-tabs-item="1" data-tabs-active>1</div>
-        <div data-tabs-item="car">2</div>
-        <div data-tabs-item="3">3</div>
-        <div data-tabs-item="4">4</div>
+        <div data-tabs-bar="1" data-tabs-active>1</div>
+        <div data-tabs-bar="car">2</div>
+        <div data-tabs-bar="3">3</div>
+        <div data-tabs-bar="4">4</div>
       </div>
       <div class="content">
         <div data-tabs-content="1" data-tabs-active>This is pretty cool, isn´t it?</div>
@@ -57,11 +58,14 @@
         <div data-tabs-content="4">WOW
     </div>
 
-    <script src="dist/tabs.js"></script>
 
     <script>
 
-      Tabs.init();
+      const myTab = new Tabs(document.querySelector('[data-tabs]'), {
+        onContruct: function(tab) {
+          console.log(tab);
+        }
+      });
 
     </script>
 
