@@ -3,66 +3,66 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="dist/tabs.css">
+    <link rel="stylesheet" href="dist/tabby.css">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet">
     <style>
 
-    body {
-      padding: 5rem;
-    }
-    [data-tabs] {
-      display: block;
-      font-family: 'Titillium Web', sans-serif;
-      background-color: rgba(229, 229, 229, .5);
-      width: 400px;
-      margin: 0 auto;
-      border-radius: 0.25rem;
-    }
-    [data-tabs] .bar {
-      display: flex;
-      border-bottom: 0.0625rem solid rgba(54, 54, 54, .6);
-    }
-    [data-tabs] [data-tabs-item] {
-      flex: 1;
-      padding: 1.25rem;
-      text-align: center;
-      border-right: 0.0625rem solid rgba(54, 54, 54, .6);
-      cursor: pointer;
-    }
-    [data-tabs] [data-tabs-content] {
-      padding: 0.625rem;
-    }
-    [data-tabs] [data-tabs-item][data-tabs-active] {
-      background-color: rgba(54, 54, 54, .2)
-    }
-    [data-tabs] [data-tabs-item]:last-child {
-      border-right-color: transparent;
-    }
+      body {
+        padding: 2.5rem;
+      }
+      .tabs {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        border-radius: .25rem;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, .1);
+      }
+      .tabs .bar {
+        width: 100%;
+        display: flex;
+      }
+      .tabs [data-tabby-bar]:first-child {
+        border-left: none;
+      }
+      .tabs [data-tabby-bar] {
+        padding: 1.25rem;
+        text-align: center;
+        cursor: pointer;
+        border-left: .0625rem solid rgba(0, 0, 0, .4);
+        flex: 1;
+        background-color: rgba(0, 0, 0, .3);
+      }
+      .tabs [data-tabby-content] {
+        padding: 1.25rem;
+      }
 
     </style>
+    <script src="dist/tabby.js"></script>
   </head>
   <body>
 
-    <div data-tabs>
+    <div class="tabs">
       <div class="bar">
-        <div data-tabs-item="1" data-tabs-active>1</div>
-        <div data-tabs-item="car">2</div>
-        <div data-tabs-item="3">3</div>
-        <div data-tabs-item="4">4</div>
+        <div data-tabby-bar="1" data-tabby-active>Tab 1</div>
+        <div data-tabby-bar="car">Tab 2</div>
+        <div data-tabby-bar="3">Tab 3</div>
+        <div data-tabby-bar="4">Tab 4</div>
       </div>
       <div class="content">
-        <div data-tabs-content="1" data-tabs-active>This is pretty cool, isn´t it?</div>
-        <div data-tabs-content="car">just 34 lines of js and 6 lines of css</div>
-        <div data-tabs-content="3">written in ES6</div>
-        <div data-tabs-content="4">WOW
+        <div data-tabby-content="1" data-tabby-active>This is pretty cool, isn´t it?</div>
+        <div data-tabby-content="car">just 34 lines of js and 6 lines of css</div>
+        <div data-tabby-content="3">written in ES6</div>
+        <div data-tabby-content="4">WOW
     </div>
 
-    <script src="dist/tabs.js"></script>
 
     <script>
-
-      Tabs.init();
-
+      const myTab = new Tabby.Component(document.querySelector('.tabs'), {
+        onConstruct: function(tab) {
+          console.log('Hook: onConstruct');
+        }
+      });
     </script>
 
   </body>

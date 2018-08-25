@@ -1,7 +1,5 @@
-<p text-align="center"><img src="/assets/tabs.gif" alt="Tags Demo"></p>
-
-# tabsjs
-📂 Minimalistic Vanilla JS Tabs written in ES6.
+# tabby
+📂 Tabs written in ES6.
 
 ## Setup
 
@@ -12,49 +10,62 @@ Include the tabs.js and tabs.css into your project.
 <link rel="stylesheet" href="tabs.css">
 
 // before the closing body tag
-<script src="tabs.min.js"></script>
+<script src="tabby.js"></script>
 ```
 
-## Usage
+## Markup
 
 ``` html
-
-// wrap every container with a data-tabs
-<div data-tabs>
-
-    <div class="bar">
-
-      // every bar item needs a data-tabs-item with a unique value like "1" "car" "Product1"
-      // data-tabs-active means that this item is active by default
-      <div data-tabs-item="1" data-tabs-active>1</div>
-      <div data-tabs-item="car">2</div>
-      <div data-tabs-item="3">3</div>
-      <div data-tabs-item="4">4</div>
-
-    </div>
-
-
-    <div class="content">
-
-      // every content item needs a data-tabs-item with a unique value like "1" "car" "Product1"
-      // data-tabs-active means that this item is active by default
-      <div data-tabs-content="1" data-tabs-active>This is pretty cool, isn´t it?</div>
-      <div data-tabs-content="car">just 37 lines of js and 6 lines of css</div>
-      <div data-tabs-content="3">written in ES6</div>
-      <div data-tabs-content="4">WOW</div>
-    </div>
-
-
+<div class="tabs">
+  <div class="bar">
+    <div data-tabby-bar="1" data-tabby-active>Tab 1</div>
+    <div data-tabby-bar="car">Tab 2</div>
+    <div data-tabby-bar="3">Tab 3</div>
+    <div data-tabby-bar="4">Tab 4</div>
   </div>
+  <div class="content">
+    <div data-tabby-content="1" data-tabby-active>This is pretty cool, isn´t it?</div>
+    <div data-tabby-content="car">just 34 lines of js and 6 lines of css</div>
+    <div data-tabby-content="3">written in ES6</div>
+    <div data-tabby-content="4">WOW
+</div>
 
-    <script src="tabs.js"></script>
-    <script>
-        // init
-        Tabs.init()
-    </script>
+<script src="tabby.js"></script>
+<script>
 
+  const myTab = new Tabby.Component(document.querySelector('.tabs'), {
+    onConstruct: function(component) {
+      console.log(component)
+    },
+    // More hooks
+    // ...
+  });
+
+</script>
 ```
 
-## Demo
+## Tabby.Component(element, hooks)
 
-Here is a <a href="https://janmarkuslanger.github.io/tabsjs/">demo</a>.
+Creates a new Tabby Component
+
+- element needs to be an HTMLElement
+- hooks needs to be an object and contains the hooks
+
+## Tabby.version
+
+Returns the new Tabby version.
+
+## Hooks
+
+This are the the function which are hooked in
+
+- onConstruct(component)
+- onBeforeKilltabs(component, activeBarElement, activeContentElement)
+- onAfterKilltabs(component, activeBarElement, activeContentElement)
+- onBeforeShowtabs(component, activeBarElement, activeContentElement)
+- onAfterShowtabs(component, activeBarElement, activeContentElement)
+- onBeforeInit(component)
+- onAfterInit(component)
+
+## Demo
+<a href="https://janmarkuslanger.github.io/tabby/">Here</a> is a demo for you.

@@ -1,3 +1,4 @@
+const WebpackAutoInject = require('webpack-auto-inject-version');
 const path = require('path');
 
 module.exports = {
@@ -21,9 +22,16 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   output: {
-   library: 'Tabs',
-   libraryTarget: "umd",
-   filename: 'tabs.js',
-   path: path.resolve(__dirname, './dist')
-},
+    library: 'Tabby',
+    libraryTarget: 'umd',
+    filename: 'tabby.js',
+    path: path.resolve(__dirname, './dist')
+  },
+  plugins: [
+    new WebpackAutoInject({
+      components: {
+        AutoIncreaseVersion: false
+      }
+    })
+  ]
 };
