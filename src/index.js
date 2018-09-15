@@ -11,7 +11,32 @@
   *
   * @return {Array}
   */
-const nodeToArray = nodeList => [].slice.call(nodeList);
+// const nodeToArray = nodeList => [].slice.call(nodeList);
+
+/**
+  * returns an array of next element siblings
+  *
+  * @param {HTMLElement}
+  *
+  * @return {Array}
+  */
+const getNextElementSiblings = (element) => {
+  const arrayContainer = [element];
+
+  let nextElement = element.nextElementSibling;
+
+  if (!nextElement) {
+    return arrayContainer;
+  }
+
+  while (nextElement) {
+    arrayContainer.push(nextElement);
+
+    nextElement = nextElement.nextElementSibling;
+  }
+
+  return arrayContainer;
+};
 
 /**
   * Active Tabs Attribute
@@ -61,15 +86,46 @@ export class Component {
       return;
     }
 
-    this.activeBar = this.container.querySelector(`[${ATTRIBUTE_BAR}]`);
-    this.activeContent = this.container.querySelector(`[${ATTRIBUTE_CONTENT}]`);
-    this.barItems = nodeToArray(
-      this.container.querySelectorAll(`[${ATTRIBUTE_BAR}]`),
-    );
-    if (this.hooks.onConstruct) {
+    // get the first active items
+    this.firstBar = this.container.querySelector(`[${ATTRIBUTE_BAR}]`);
+    this.firstContent = this.container.querySelector(`[${ATTRIBUTE_CONTENT}]`);
+
+    // get the active items
+    this.activeBar = this.container.querySelector(`[${ATTRIBUTE_BAR}][${ATTRIBUTE_ACTIVE}]`);
+    this.activeContent = this.container.querySelector(`[${ATTRIBUTE_CONTENT}][${ATTRIBUTE_ACTIVE}]`);
+
+    // collect all siblings bar items
+    this.barItems = this.collectBarItems();
+
+    // collect all sibling content items
+    this.contentItems = this.collectContentItems();
+
+    if (this.hooks && this.hooks.onConstruct) {
       this.hooks.onConstruct(this);
     }
     this.initTabs(this.container);
+  }
+
+  /**
+    * collect bar items
+    *
+    * @param {HTMLElement}
+    *
+    * @return {Array}
+    */
+  collectBarItems() {
+    return getNextElementSiblings(this.firstBar);
+  }
+
+  /**
+    * collect content items
+    *
+    * @param {HTMLElement}
+    *
+    * @return {Array}
+    */
+  collectContentItems() {
+    return getNextElementSiblings(this.firstContent);
   }
 
   /**
@@ -77,7 +133,7 @@ export class Component {
     *
     */
   killActiveTab() {
-    if (this.hooks.onBeforeKilltabs) {
+    if (this.hooks && this.hooks.onBeforeKilltabs) {
       this.hooks.onBeforeKilltabs(this, this.activeBar, this.activeContent);
     }
 
@@ -91,7 +147,7 @@ export class Component {
       this.activeContent = null;
     }
 
-    if (this.hooks.onAfterKilltabs) {
+    if (this.hooks && this.hooks.onAfterKilltabs) {
       this.hooks.onAfterKilltabs(this, this.activeBar, this.activeContent);
     }
   }
@@ -105,14 +161,14 @@ export class Component {
     this.activeBar = item;
     this.activeContent = this.container.querySelector(`[${ATTRIBUTE_CONTENT}="${this.activeBar.getAttribute(ATTRIBUTE_BAR)}"]`);
 
-    if (this.hooks.onBeforeShowtabs) {
+    if (this.hooks && this.hooks.onBeforeShowtabs) {
       this.hooks.onBeforeShowtabs(this, this.activeBar, this.activeContent);
     }
 
     this.activeBar.setAttribute(ATTRIBUTE_ACTIVE, '');
     this.activeContent.setAttribute(ATTRIBUTE_ACTIVE, '');
 
-    if (this.hooks.onAfterShowtabs) {
+    if (this.hooks && this.hooks.onAfterShowtabs) {
       this.hooks.onAfterShowtabs(this, this.activeBar, this.activeContent);
     }
   }
@@ -122,7 +178,7 @@ export class Component {
     *
     */
   initTabs() {
-    if (this.hooks.onBeforeInit) {
+    if (this.hooks && this.hooks.onBeforeInit) {
       this.hooks.onBeforeInit(this);
     }
     this.barItems.forEach((item) => {
@@ -135,7 +191,7 @@ export class Component {
       });
     });
 
-    if (this.hooks.onAfterInit) {
+    if (this.hooks && this.hooks.onAfterInit) {
       this.hooks.onAfterInit(this);
     }
   }
