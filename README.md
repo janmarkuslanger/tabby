@@ -5,11 +5,11 @@
 
 Include the tabs.js and tabs.css into your project.
 
-``` javascript
-// into the <head>
+``` html
+<!-- into the <head> -->
 <link rel="stylesheet" href="tabs.css">
 
-// before the closing body tag
+<!-- before the closing body tag -->
 <script src="tabby.js"></script>
 ```
 
