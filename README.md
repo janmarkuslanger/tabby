@@ -1,5 +1,7 @@
 # tabby
-📂 Tabs written in ES6.
+📂 Tabswitcher written in Vanilla JS without any dependencies.
+
+**If you like it please give it a star ⭐️**
 
 ## Setup
 
