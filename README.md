@@ -3,6 +3,12 @@
 
 **If you like it please give it a star ⭐️**
 
+## npm 
+
+´´´ npm 
+npm i tabsjs-lib
+´´´´
+
 ## Setup
 
 Include the tabs.js and tabs.css into your project.
