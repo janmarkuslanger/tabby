@@ -5,9 +5,9 @@
 
 ## npm 
 
-´´´ npm 
+``` npm 
 npm i tabsjs-lib
-´´´´
+```
 
 ## Setup
 
