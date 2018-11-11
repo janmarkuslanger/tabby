@@ -92,7 +92,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - remove package `webpack-auto-inject-version`
 
 ### Changed
-- package name to `tabby`
 - package description
 - main script to dist/tabby.js
 - updated webpack.config.js
