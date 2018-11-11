@@ -3,9 +3,9 @@
 
 **If you like it please give it a star ⭐️**
 
-## npm 
+## npm
 
-``` npm 
+``` npm
 npm i tabsjs-lib
 ```
 
@@ -85,6 +85,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### [Unreleased]
+
+### [2.0.2] - 2018-11-11
+### Remove
+- remove `nodeToArray` function in index.js
+- remove package `webpack-auto-inject-version`
+
+### Changed
+- package name to `tabby`
+- package description
+- main script to dist/tabby.js
+- updated webpack.config.js
+
+### Added
+- npm scripts
 
 ### [2.0.1] - 2018-09-16
 ### Changed

@@ -1,18 +1,8 @@
 /**
-  * Tabs js
+  * Tabby
   *
   * @author Jan-Markus Langer
   */
-
-/**
-  * Convert a NodeList to an Array
-  *
-  * @param {NodeList} nodeList
-  *
-  * @return {Array}
-  */
-// const nodeToArray = nodeList => [].slice.call(nodeList);
-
 /**
   * returns an array of next element siblings
   *
@@ -64,7 +54,7 @@ const ATTRIBUTE_CONTENT = 'data-tabby-content';
   *
   * @type {String}
   */
-export const version = '[AIV]{version}[/AIV]';
+export const version = '2.0.2';
 
 /**
   * Tabs

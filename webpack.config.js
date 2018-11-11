@@ -1,4 +1,3 @@
-const WebpackAutoInject = require('webpack-auto-inject-version');
 const path = require('path');
 
 module.exports = {
@@ -26,12 +25,5 @@ module.exports = {
     libraryTarget: 'umd',
     filename: 'tabby.js',
     path: path.resolve(__dirname, './dist')
-  },
-  plugins: [
-    new WebpackAutoInject({
-      components: {
-        AutoIncreaseVersion: false
-      }
-    })
-  ]
+  }
 };
