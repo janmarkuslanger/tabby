@@ -35,7 +35,8 @@ Include the tabs.js and tabs.css into your project.
     <div data-tabby-content="1" data-tabby-active>This is pretty cool, isn´t it?</div>
     <div data-tabby-content="car">just 34 lines of js and 6 lines of css</div>
     <div data-tabby-content="3">written in ES6</div>
-    <div data-tabby-content="4">WOW
+    <div data-tabby-content="4">WOW</div>
+  </div>
 </div>
 
 <script src="tabby.js"></script>
