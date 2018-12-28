@@ -1,6 +1,8 @@
 # tabby
 📂 Tabswitcher written in Vanilla JS without any dependencies.
 
+<p align="center"><img width="500" src="assets/tabby-showcase.gif"</p>
+
 **If you like it please give it a star ⭐️**
 
 ## npm
