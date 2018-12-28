@@ -8,22 +8,22 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader']
-      }
-    ]
+        use: ['babel-loader', 'eslint-loader'],
+      },
+    ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx'],
   },
   output: {
     library: 'Tabby',
     libraryTarget: 'umd',
     filename: 'tabby.js',
-    path: path.resolve(__dirname, './dist')
-  }
+    path: path.resolve(__dirname, './dist'),
+  },
 };
