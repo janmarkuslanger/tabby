@@ -6,9 +6,8 @@
 
 ---
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/55029594bbaa4283a15ba66a7d4ff436)](https://app.codacy.com/app/janmarkuslanger/tabby?utm_source=github.com&utm_medium=referral&utm_content=janmarkuslanger/tabby&utm_campaign=Badge_Grade_Dashboard)
-
 <p align="center">
+<a class="badge-align" href="https://www.codacy.com/app/janmarkuslanger/tabby?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=janmarkuslanger/tabby&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/f3a3da60866f4d5a8a0f259e5300cd55"/></a>
   <img src="https://img.badgesize.io/janmarkuslanger/tabby/dist/tabby.js" >
 </p>
 
