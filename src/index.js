@@ -72,7 +72,6 @@ export class Component {
     this.methods = methods;
 
     if (!this.container) {
-      Console.error('Container is not given!');
       return;
     }
 
@@ -133,7 +132,11 @@ export class Component {
     */
   killActiveTab() {
     if (this.methods && this.methods.onBeforeKilltabs) {
-      this.methods.onBeforeKilltabs(this, this.activeBar, this.activeContent);
+      this.methods.onBeforeKilltabs(
+        this,
+        this.activeBar,
+        this.activeContent,
+      );
     }
 
     if (this.activeBar) {
@@ -147,7 +150,11 @@ export class Component {
     }
 
     if (this.methods && this.methods.onAfterKilltabs) {
-      this.methods.onAfterKilltabs(this, this.activeBar, this.activeContent);
+      this.methods.onAfterKilltabs(
+        this,
+        this.activeBar,
+        this.activeContent,
+      );
     }
   }
 
