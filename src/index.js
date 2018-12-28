@@ -165,19 +165,28 @@ export class Component {
     */
   showTab(item) {
     this.activeBar = item;
+    const attr = this.activeBar.getAttribute(ATTRIBUTE_BAR);
     this.activeContent = this.container.querySelector(
-      `[${ATTRIBUTE_CONTENT}="${this.activeBar.getAttribute(ATTRIBUTE_BAR)}"]`,
+      `[${ATTRIBUTE_CONTENT}="${attr}"]`,
     );
 
     if (this.methods && this.methods.onBeforeShowtabs) {
-      this.methods.onBeforeShowtabs(this, this.activeBar, this.activeContent);
+      this.methods.onBeforeShowtabs(
+        this,
+        this.activeBar,
+        this.activeContent,
+      );
     }
 
     this.activeBar.setAttribute(ATTRIBUTE_ACTIVE, '');
     this.activeContent.setAttribute(ATTRIBUTE_ACTIVE, '');
 
     if (this.methods && this.methods.onAfterShowtabs) {
-      this.methods.onAfterShowtabs(this, this.activeBar, this.activeContent);
+      this.methods.onAfterShowtabs(
+        this,
+        this.activeBar,
+        this.activeContent,
+      );
     }
   }
 
