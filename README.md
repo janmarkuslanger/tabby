@@ -1,4 +1,3 @@
-
 <h1 align="center">Tabby</h1>
 <p align="center"><strong>Simple Tabswitcher written in Vanilla Javascript.</strong></p>
 
@@ -66,8 +65,8 @@ Include the tabs.js and tabs.css into your project.
 ## Tabby.Component(element, methods)
 
 Creates a new Tabby Component:
-  - element needs to be an HTMLElement
-  - hooks needs to be an object and contains the hooks
+- element needs to be an HTMLElement
+- hooks needs to be an object and contains the hooks
 
 ## Tabby.version
 
