@@ -46,14 +46,14 @@ Include the tabs.js and tabs.css into your project.
     onConstruct: function(component) {
       console.log(component)
     },
-    // More hooks
+    // More usefull methods
     // ...
   });
 
 </script>
 ```
 
-## Tabby.Component(element, hooks)
+## Tabby.Component(element, methods)
 
 Creates a new Tabby Component
 
@@ -64,9 +64,9 @@ Creates a new Tabby Component
 
 Returns the new Tabby version.
 
-## Hooks
+## Methods
 
-This are the the function which are hooked in
+These are the methods which will be executed 
 
 - onConstruct(component)
 - onBeforeKilltabs(component, activeBarElement, activeContentElement)
