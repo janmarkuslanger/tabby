@@ -65,10 +65,9 @@ Include the tabs.js and tabs.css into your project.
 
 ## Tabby.Component(element, methods)
 
-Creates a new Tabby Component
-
-- element needs to be an HTMLElement
-- hooks needs to be an object and contains the hooks
+Creates a new Tabby Component:
+  - element needs to be an HTMLElement
+  - hooks needs to be an object and contains the hooks
 
 ## Tabby.version
 
@@ -76,15 +75,14 @@ Returns the new Tabby version.
 
 ## Methods
 
-These are the methods which will be executed
-
-- onConstruct(component)
-- onBeforeKilltabs(component, activeBarElement, activeContentElement)
-- onAfterKilltabs(component, activeBarElement, activeContentElement)
-- onBeforeShowtabs(component, activeBarElement, activeContentElement)
-- onAfterShowtabs(component, activeBarElement, activeContentElement)
-- onBeforeInit(component)
-- onAfterInit(component)
+These are the methods which will be executed:
+  - onConstruct(component)
+  - onBeforeKilltabs(component, activeBarElement, activeContentElement)
+  - onAfterKilltabs(component, activeBarElement, activeContentElement)
+  - onBeforeShowtabs(component, activeBarElement, activeContentElement)
+  - onAfterShowtabs(component, activeBarElement, activeContentElement)
+  - onBeforeInit(component)
+  - onAfterInit(component)
 
 ## Demo
 <a href="https://janmarkuslanger.github.io/tabby/">Here</a> is a demo for you.
@@ -99,21 +97,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### [2.0.2] - 2018-11-11
 ### Remove
-- remove `nodeToArray` function in index.js
-- remove package `webpack-auto-inject-version`
+  - remove `nodeToArray` function in index.js
+  - remove package `webpack-auto-inject-version`
 
 ### Changed
-- package description
-- main script to dist/tabby.js
-- updated webpack.config.js
+  - package description
+  - main script to dist/tabby.js
+  - updated webpack.config.js
 
 ### Added
-- npm scripts
+  - npm scripts
 
 ### [2.0.1] - 2018-09-16
 ### Changed
-- Update devDependencies
+  - Update devDependencies
 
 ### Bugfix
-- Tabs in Tabs didn´t work
-- Tabby didnt work when Tabs did´t wok when no hooks was given
+  - Tabs in Tabs didn´t work
+  - Tabby didnt work when Tabs did´t wok when no hooks was given
