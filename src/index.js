@@ -72,17 +72,25 @@ export class Component {
     this.methods = methods;
 
     if (!this.container) {
-      console.error('Container is not given!');
+      Console.error('Container is not given!');
       return;
     }
 
     // get the first active items
-    this.firstBar = this.container.querySelector(`[${ATTRIBUTE_BAR}]`);
-    this.firstContent = this.container.querySelector(`[${ATTRIBUTE_CONTENT}]`);
+    this.firstBar = this.container.querySelector(
+      `[${ATTRIBUTE_BAR}]`,
+    );
+    this.firstContent = this.container.querySelector(
+      `[${ATTRIBUTE_CONTENT}]`,
+    );
 
     // get the active items
-    this.activeBar = this.container.querySelector(`[${ATTRIBUTE_BAR}][${ATTRIBUTE_ACTIVE}]`);
-    this.activeContent = this.container.querySelector(`[${ATTRIBUTE_CONTENT}][${ATTRIBUTE_ACTIVE}]`);
+    this.activeBar = this.container.querySelector(
+      `[${ATTRIBUTE_BAR}][${ATTRIBUTE_ACTIVE}]`,
+    );
+    this.activeContent = this.container.querySelector(
+      `[${ATTRIBUTE_CONTENT}][${ATTRIBUTE_ACTIVE}]`,
+    );
 
     // collect all siblings bar items
     this.barItems = this.collectBarItems();
@@ -150,7 +158,9 @@ export class Component {
     */
   showTab(item) {
     this.activeBar = item;
-    this.activeContent = this.container.querySelector(`[${ATTRIBUTE_CONTENT}="${this.activeBar.getAttribute(ATTRIBUTE_BAR)}"]`);
+    this.activeContent = this.container.querySelector(
+      `[${ATTRIBUTE_CONTENT}="${this.activeBar.getAttribute(ATTRIBUTE_BAR)}"]`,
+    );
 
     if (this.methods && this.methods.onBeforeShowtabs) {
       this.methods.onBeforeShowtabs(this, this.activeBar, this.activeContent);
