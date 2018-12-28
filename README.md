@@ -1,5 +1,5 @@
-# tabby
 
+<h1 align="center">Tabby</h1>
 <p align="center"><strong>Simple Tabswitcher written in Vanilla Javascript.</strong></p>
 
 <p align="center"><img width="500" src="assets/tabby.png"</p>
