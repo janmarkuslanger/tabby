@@ -6,6 +6,8 @@
 
 ---
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/55029594bbaa4283a15ba66a7d4ff436)](https://app.codacy.com/app/janmarkuslanger/tabby?utm_source=github.com&utm_medium=referral&utm_content=janmarkuslanger/tabby&utm_campaign=Badge_Grade_Dashboard)
+
 <p align="center">
   <img src="https://img.badgesize.io/janmarkuslanger/tabby/dist/tabby.js" >
 </p>
