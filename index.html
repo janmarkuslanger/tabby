@@ -17,7 +17,6 @@
         margin: 0 auto;
         border-radius: .25rem;
         overflow: hidden;
-        background-color: rgba(0, 0, 0, .05);
       }
       .tabs .bar {
         width: 100%;
@@ -30,9 +29,17 @@
         padding: 1.25rem;
         text-align: center;
         cursor: pointer;
-        border-left: .0625rem solid rgba(0, 0, 0, .4);
         flex: 1;
-        background-color: rgba(0, 0, 0, .1);
+        color: rgba(33,33,33, .2);
+        border-bottom: .0625rem solid rgba(33,33,33, .2);
+      }
+      .tabs [data-tabby-bar]:hover {
+        color: rgba(33,33,33, .3);
+        border-bottom: .0625rem solid rgba(33,33,33, .3);
+      }
+      .tabs [data-tabby-bar][data-tabby-active] {
+        color: rgba(33,33,33,1);
+        border-bottom: .0625rem solid rgba(33,33,33, 1);
       }
       .tabs [data-tabby-content] {
         padding: 1.25rem;

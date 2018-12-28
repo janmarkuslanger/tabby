@@ -67,9 +67,9 @@ export class Component {
     *
     * @param {HTMLElement} container
     */
-  constructor(container, hooks) {
+  constructor(container, methods) {
     this.container = container;
-    this.hooks = hooks;
+    this.methods = methods;
 
     if (!this.container) {
       console.error('Container is not given!');
@@ -90,9 +90,10 @@ export class Component {
     // collect all sibling content items
     this.contentItems = this.collectContentItems();
 
-    if (this.hooks && this.hooks.onConstruct) {
-      this.hooks.onConstruct(this);
+    if (this.methods && this.methods.onConstruct) {
+      this.methods.onConstruct(this);
     }
+
     this.initTabs(this.container);
   }
 
@@ -123,8 +124,8 @@ export class Component {
     *
     */
   killActiveTab() {
-    if (this.hooks && this.hooks.onBeforeKilltabs) {
-      this.hooks.onBeforeKilltabs(this, this.activeBar, this.activeContent);
+    if (this.methods && this.methods.onBeforeKilltabs) {
+      this.methods.onBeforeKilltabs(this, this.activeBar, this.activeContent);
     }
 
     if (this.activeBar) {
@@ -137,8 +138,8 @@ export class Component {
       this.activeContent = null;
     }
 
-    if (this.hooks && this.hooks.onAfterKilltabs) {
-      this.hooks.onAfterKilltabs(this, this.activeBar, this.activeContent);
+    if (this.methods && this.methods.onAfterKilltabs) {
+      this.methods.onAfterKilltabs(this, this.activeBar, this.activeContent);
     }
   }
 
@@ -151,15 +152,15 @@ export class Component {
     this.activeBar = item;
     this.activeContent = this.container.querySelector(`[${ATTRIBUTE_CONTENT}="${this.activeBar.getAttribute(ATTRIBUTE_BAR)}"]`);
 
-    if (this.hooks && this.hooks.onBeforeShowtabs) {
-      this.hooks.onBeforeShowtabs(this, this.activeBar, this.activeContent);
+    if (this.methods && this.methods.onBeforeShowtabs) {
+      this.methods.onBeforeShowtabs(this, this.activeBar, this.activeContent);
     }
 
     this.activeBar.setAttribute(ATTRIBUTE_ACTIVE, '');
     this.activeContent.setAttribute(ATTRIBUTE_ACTIVE, '');
 
-    if (this.hooks && this.hooks.onAfterShowtabs) {
-      this.hooks.onAfterShowtabs(this, this.activeBar, this.activeContent);
+    if (this.methods && this.methods.onAfterShowtabs) {
+      this.methods.onAfterShowtabs(this, this.activeBar, this.activeContent);
     }
   }
 
@@ -168,8 +169,8 @@ export class Component {
     *
     */
   initTabs() {
-    if (this.hooks && this.hooks.onBeforeInit) {
-      this.hooks.onBeforeInit(this);
+    if (this.methods && this.methods.onBeforeInit) {
+      this.methods.onBeforeInit(this);
     }
     this.barItems.forEach((item) => {
       item.addEventListener('click', () => {
@@ -181,8 +182,8 @@ export class Component {
       });
     });
 
-    if (this.hooks && this.hooks.onAfterInit) {
-      this.hooks.onAfterInit(this);
+    if (this.methods && this.methods.onAfterInit) {
+      this.methods.onAfterInit(this);
     }
   }
 }
