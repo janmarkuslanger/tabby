@@ -1,7 +1,10 @@
 # tabby
-📂 Tabswitcher written in Vanilla JS without any dependencies.
 
-<p align="center"><img width="500" src="assets/tabby-showcase.gif"</p>
+<p align="center"><strong>Simple Tabswitcher written in Vanilla Javascript.</strong></p>
+
+<p align="center"><img width="500" src="assets/tabby.png"</p>
+
+---
 
 **If you like it please give it a star ⭐️**
 
@@ -68,7 +71,7 @@ Returns the new Tabby version.
 
 ## Methods
 
-These are the methods which will be executed 
+These are the methods which will be executed
 
 - onConstruct(component)
 - onBeforeKilltabs(component, activeBarElement, activeContentElement)
