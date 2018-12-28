@@ -6,6 +6,10 @@
 
 ---
 
+<p align="center">
+  <a href="https://deepscan.io/dashboard#view=project&tid=2701&pid=3949&bid=33324"><img src="https://deepscan.io/api/teams/2701/projects/3949/branches/33324/badge/grade.svg" alt="DeepScan grade"></a>
+</p>
+
 **If you like it please give it a star ⭐️**
 
 ## npm
