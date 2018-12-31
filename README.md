@@ -7,7 +7,7 @@
 
 <p align="center">
   <a class="badge-align" href="https://www.codacy.com/app/janmarkuslanger/tabby?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=janmarkuslanger/tabby&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/f3a3da60866f4d5a8a0f259e5300cd55"/></a>
-  <img src="https://img.badgesize.io/janmarkuslanger/tabby/blob/master/dist/tabby.js" >
+  <img src="https://img.badgesize.io/janmarkuslanger/tabby/2.0.2/dist/tabby.js" >
 </p>
 
 **If you like it please give it a star ⭐️**
