@@ -38,8 +38,8 @@ Tabby comes with a few simple options.
 
 name | type
 -----|----
-animation | <string> or false
-methods | <object>
+animation | string or false
+methods | object
 
 
 ### Option - animation
