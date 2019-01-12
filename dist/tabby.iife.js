@@ -204,7 +204,9 @@ var Tabby = (function (exports) {
           return;
       }
 
-      return new Tabby(container, options);
+      return Array.isArray(container)
+          ? container.map((component) => new Tabby(component, options))
+          : new Tabby(container, options);
   };
 
   exports.version = version;
