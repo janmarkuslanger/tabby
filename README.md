@@ -36,6 +36,12 @@ $ npm i tabsjs-lib
 
 Tabby comes with a few simple options.
 
+name | type
+-----|----
+animation | <string> or false
+methods | <object>
+
+
 ### Option - animation
 
 By default there are no animations in tabby but you can get some!
