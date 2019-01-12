@@ -46,6 +46,7 @@ methods | object
 ### Option - animation
 
 By default there are no animations in tabby but you can get some!
+Currently the animations are running linear.
 
 These are the animations that are currently available:
 
