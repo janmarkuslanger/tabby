@@ -42,7 +42,7 @@ By default there are no animations in tabby but you can get some!
 
 These are the animations that are currently available:
 
------ |
+-----|
 `fade` |
 
 ### Option - methods
