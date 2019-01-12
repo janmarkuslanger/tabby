@@ -39,6 +39,7 @@ Tabby comes with a few simple options.
 name | type
 -----|----
 animation | string or false
+time | number
 methods | object
 
 
@@ -51,6 +52,10 @@ These are the animations that are currently available:
 animation |
 -----|
 `fade` |
+
+### Option - time
+
+Describes how long the animation (if there is one) should be running.
 
 ### Option - methods
 
