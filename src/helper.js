@@ -22,3 +22,17 @@ export const getSiblings = (element) => {
 
   return arrayContainer;
 };
+
+/**
+ * @type {HTML Element} element
+ */
+export const show = (element) => {
+    element.style.display = 'block';
+}
+
+/**
+ * @type {HTML Element} element
+ */
+export const hide = (element) => {
+    element.style.display = 'none';
+}

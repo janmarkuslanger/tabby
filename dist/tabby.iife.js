@@ -28,11 +28,87 @@ var Tabby = (function (exports) {
     *
     * @return {Array}
     */
+  const getSiblings = (element) => {
+    const arrayContainer = [element];
+
+    let nextElement = element.nextElementSibling;
+
+    if (!nextElement) {
+      return arrayContainer;
+    }
+
+    while (nextElement) {
+      arrayContainer.push(nextElement);
+
+      nextElement = nextElement.nextElementSibling;
+    }
+
+    return arrayContainer;
+  };
+
+  /**
+   * @type {HTML Element} element
+   */
+  const show = (element) => {
+      element.style.display = 'block';
+  };
+
+  /**
+   * @type {HTML Element} element
+   */
+  const hide = (element) => {
+      element.style.display = 'none';
+  };
 
   /**
    * fade out an element
-   * @type {HTML Element}
+   * @type {HTML Element} element
+   * @type {Function} cb
    */
+  const fadeOut = (element, cb) => {
+      let opacity = 1;
+      const step = .05;
+
+      function run() {
+          if (opacity > 0) {
+              opacity -= step;
+              element.style.opacity = opacity.toString();
+              requestAnimationFrame(run);
+          } else {
+              cancelAnimationFrame(run);
+              if (cb) {
+                  cb(element);
+              }
+          }
+      }
+
+      requestAnimationFrame(run);
+  };
+
+  /**
+   * fade out an element
+   * @type {HTML Element} element
+   * @type {Function} cb
+   */
+  const fadeIn = (element,cb) => {
+      let opacity = 0;
+      const step = .05;
+
+      function run() {
+          if (opacity < 1) {
+              opacity += step;
+              element.style.opacity = opacity.toString();
+              requestAnimationFrame(run);
+          } else {
+              cancelAnimationFrame(run);
+              if (cb) {
+                  cb(element);
+              }
+          }
+      }
+
+      requestAnimationFrame(run);
+  };
 
   class Tabby {
 
@@ -40,33 +116,37 @@ var Tabby = (function (exports) {
           this.container = container;
           this.animation = options.animation || false; // 'fade'
           this.methods = options.methods || null;
+          this.index = 0;
+          this.items = [];
 
-          this.items = this.collectItems();
           this.initTabs();
       }
 
       collectItems() {
-          const items = [];
 
-          // const bars = getSiblings(this.firstBar);
-          // const content = getSiblings(this.firstContent);
 
-          bars.forEach((bar) => {
-              const attr = bar.getAttribute(ATTRIBUTE_BAR);
-              const partner = content.filter(item => item.getAttribute(ATTRIBUTE_CONTENT) === attr)[0];
-              items.push([bar,partner]);
-          });
 
           return items;
       }
 
+      doSwitch(index){
 
-      /**
-      * activate a tab
-      *
-      * @param {HTMLElement}
-      */
-      showTab(item) {
+          const prev = this.items[this.index][1];
+          const active = this.items[index][1];
+
+          if (!this.animation) {
+              hide(prev);
+              show(active);
+          } else {
+              fadeOut(prev, function(el) {
+                  hide(prev);
+                  show(active);
+                  fadeIn(active);
+              });
+          }
+
+
+          this.index = index;
       }
 
       /**
@@ -74,7 +154,30 @@ var Tabby = (function (exports) {
       *
       */
       initTabs() {
+          const bars = getSiblings(
+              this.container.querySelector(`[${ATTRIBUTE_BAR}]`)
+          );
 
+          const content = getSiblings(
+              this.container.querySelector(`[${ATTRIBUTE_CONTENT}]`)
+          );
+
+          bars.forEach((bar, index) => {
+              const attr = bar.getAttribute(ATTRIBUTE_BAR);
+              const partner = content.filter(item => item.getAttribute(ATTRIBUTE_CONTENT) === attr)[0];
+
+              if (index === 0) {
+                  partner.style.display = 'block';
+              } else {
+                  partner.style.display = 'none';
+              }
+
+              this.items.push([bar,partner]);
+
+              bar.addEventListener('click', () => {
+                  this.doSwitch(index);
+              });
+          });
       }
 
 
