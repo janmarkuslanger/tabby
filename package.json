@@ -4,7 +4,7 @@
   "description": "Tabby - A tiny tabswitcher plugin.",
   "main": "dist/tabby.js",
   "scripts": {
-    "build-browser": "rollup -c scripts/iife.config.js -w",
+    "build-browser": "rollup -c scripts/iife.config.js",
     "build-node": "rollup -c scripts/cjs.config.js",
     "build-umd": "rollup -c scripts/umd.config.js",
     "build": "npm run build-browser && npm run build-node && npm run build-umd"

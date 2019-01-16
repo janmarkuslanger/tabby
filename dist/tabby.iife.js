@@ -168,8 +168,10 @@ var Tabby = (function (exports) {
 
               if (index === 0) {
                   partner.style.display = 'block';
+                  partner.style.opacity = '1';
               } else {
                   partner.style.display = 'none';
+                  partner.style.opacity = '0';
               }
 
               this.items.push([bar,partner]);
