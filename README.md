@@ -1,4 +1,4 @@
-<h1 align="center">Tabby</h1>
+<h1 align="center">Tabby <a href="https://github.com/janmarkuslanger/tabby/tree/v3">V3 in progress</a></h1>
 <p align="center"><strong>Simple Tabswitcher written in Vanilla Javascript.</strong></p>
 
 <p align="center"><img width="500" src="assets/tabby.png"</p>
