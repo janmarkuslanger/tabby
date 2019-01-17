@@ -1,6 +1,5 @@
 # Tabby
 ## Lightweight and simple Vanilla JS Tabswitcher Plugin
-
 ---
 
 ## Install
