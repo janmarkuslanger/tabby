@@ -7,6 +7,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
   *
   * @type {String}
   */
+const ATTRIBUTE_ACTIVE = 'data-tabby-active';
 
 /**
   * Bar Tabs Attribute
@@ -132,20 +133,26 @@ class Tabby {
 
     doSwitch(index){
 
-        const prev = this.items[this.index][1];
-        const active = this.items[index][1];
+        const prevContent = this.items[this.index][1];
+        const nextContent = this.items[index][1];
+
+        const prevBar = this.items[this.index][0];
+        const nextBar = this.items[index][0];
 
         if (!this.animation) {
-            hide(prev);
-            show(active);
+            hide(prevContent);
+            show(nextContent);
+            prevBar.removeAttribute(ATTRIBUTE_ACTIVE);
+            nextBar.setAttribute(ATTRIBUTE_ACTIVE, '');
         } else {
-            fadeOut(prev, function(el) {
-                hide(prev);
-                show(active);
-                fadeIn(active);
+            fadeOut(prevContent, function(el) {
+                hide(prevContent);
+                show(nextContent);
+                fadeIn(nextContent);
+                prevBar.removeAttribute(ATTRIBUTE_ACTIVE);
+                nextBar.setAttribute(ATTRIBUTE_ACTIVE, '');
             });
         }
-
 
         this.index = index;
     }
