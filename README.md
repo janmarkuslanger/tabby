@@ -57,20 +57,3 @@ animation |
 ### Option - time
 
 Describes how long the animation (if there is one) should be running.
-
-### Option - methods
-
-Even when these are no options, i decides to put the lifecycle methods into the options to have a compact Object that
-handles the optional behaviour of tabby. Every methods gets the whole tabby component as an argument.
-
-These are the methods we got in tabby.
-
-name                | description
---------------------|-----------
-onConstruct         |
-onBeforeKilltabs    |
-onAfterKilltabs     |
-onBeforeShowtabs    |
-onAfterShowtabs     |
-onBeforeInit        |
-onAfterInit         |

@@ -116,7 +116,6 @@ var Tabby = (function (exports) {
       constructor(container, options) {
           this.container = container;
           this.animation = options.animation || false; // 'fade'
-          this.methods = options.methods || null;
           this.index = 0;
           this.items = [];
 
