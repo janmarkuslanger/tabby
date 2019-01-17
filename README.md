@@ -34,7 +34,7 @@ Here is a very simple markup
 
 </div>
 
-<script src="<path_to_file>/tabby.iiefe.js"></script>
+<script src="<path_to_file>/tabby.iife.js"></script>
 <script>
     Tabby.init();
 </script>
