@@ -57,7 +57,7 @@ By default tabby switches the tabs with a nice fade effect. If you do not like a
 
 In the future we will have more animations.
 
-animation |
+animation | description
 -----|-----
 `false` | no animation
 `"fade"` | default
