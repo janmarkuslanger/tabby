@@ -1,6 +1,0 @@
-[data-tabby-content] {
-  display: none;
-}
-[data-tabby-content][data-tabby-active] {
-  display: block;
-}
