@@ -5,55 +5,60 @@
 
 ## Install
 
-### script
+Install tabby is quit simple. Create the simple markup and include the script. Then you are ready to go!
 
-Just clone or download this repository and grab the files and put them into your HTML!
-These files are living in the `dist` folder. Best way is to put the script files before the closing body.
+### Markup
+
+Tabby works with data attributes, so we need to use three different data attributes here.
+
+attribute | description
+----------|-----------
+data-tabby | the container wraps your tabs
+data-tabby-bar | bar that needs a value which links to the content
+data-tabby-content | content part that needs a value which links to the bar
+
+
+Here is a very simple markup
 
 ``` html
-...
+<div data-tabby>
 
-<script src="/dist/tabby.umd.js"></script>
+    <div class="bars">
+        <div data-tabby-bar="1">Bar one</div>
+        <div data-tabby-bar="2">Another bar</div>
+    </div>
+
+    <div class="content">
+        <div data-tabby-content="1">Content one</div>
+        <div data-tabby-content="2">Content two</div>
+    </div>
+
+</div>
+
+<script src="<path_to_file>/tabby.iiefe.js"></script>
 <script>
-
-    // tabby init comes here
-
+    Tabby.init();
 </script>
 
-</body>
-
-```
-
-### npm
-
-``` npm
-$ npm i tabsjs-lib
 ```
 
 ## Example
 
-## Options
+## Animations
 
-Tabby comes with a few simple options.
+By default tabby switches the tabs with a nice fade effect. If you do not like animations you need to init Tabby like this.
 
-name | type
------|----
-animation | string or false
-time | number
-methods | object
+``` html
+<script>
+    Tabby.init({
+        animation: false
+    });
+</script>
+```
 
-
-### Option - animation
-
-By default there are no animations in tabby but you can get some!
-Currently the animations are running linear.
-
-These are the animations that are currently available:
+In the future we will have more animations.
 
 animation |
------|
-`fade` |
-
-### Option - time
-
-Describes how long the animation (if there is one) should be running.
+-----|-----
+`false` | no animation
+`"fade"` | default

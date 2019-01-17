@@ -6,18 +6,11 @@ export class Tabby {
 
     constructor(container, options) {
         this.container = container;
-        this.animation = options.animation || false; // 'fade'
+        this.animation = options.animation || 'fade'; // 'fade'
         this.index = 0;
         this.items = [];
 
         this.initTabs();
-    }
-
-    collectItems() {
-
-
-
-        return items;
     }
 
     doSwitch(index){
@@ -78,7 +71,4 @@ export class Tabby {
             });
         });
     }
-
-
-
 };
