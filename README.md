@@ -6,8 +6,6 @@ Lightweight and simple Vanilla JS Tab Switcher Plugin
 
 ---
 
-## <a href="https://janmarkuslanger.github.io/tabby/">Demo</a>
-
 ## Install
 
 Install tabby is quit simple. Create the simple markup and include the script. Then you are ready to go!
@@ -67,3 +65,5 @@ animation | description
 -----|-----
 `false` | no animation
 `"fade"` | default
+
+## <a href="https://janmarkuslanger.github.io/tabby/">Demo</a>
