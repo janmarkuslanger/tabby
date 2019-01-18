@@ -1,6 +1,10 @@
 # Tabby
-## Lightweight and simple Vanilla JS Tabswitcher Plugin
+
+Lightweight and simple Vanilla JS Tabswitcher Plugin
+
 ---
+
+## <a href="https://janmarkuslanger.github.io/tabby/">Demo</a>
 
 ## Install
 
