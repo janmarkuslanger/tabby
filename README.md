@@ -4,7 +4,16 @@ Lightweight and simple Vanilla JS Tab Switcher Plugin
 
 <p align="center"><img width="550" src="assets/tabby.png" alt="Tab Switcher Demo"></p>
 
+<p align="center">
+    <img src="https://badge.fury.io/js/tabsjs-lib.svg" />
+    <img src="https://img.shields.io/github/size/janmarkuslanger/tabby/dist/tabby.iife.js.svg">
+</p>
+
 ---
+
+## Need help?
+
+If you need some help to get started of have an issue? Create an issue or write me jan-markus@gmx.de
 
 ## Install
 
