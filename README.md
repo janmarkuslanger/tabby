@@ -1,6 +1,8 @@
 # Tabby
 
-Lightweight and simple Vanilla JS Tabswitcher Plugin
+Lightweight and simple Vanilla JS Tab Switcher Plugin
+
+<img src="assets/tabby.png" alt="Tab Switcher Demo">
 
 ---
 

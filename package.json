@@ -1,7 +1,7 @@
 {
   "name": "tabsjs-lib",
   "version": "3.0.0-beta",
-  "description": "Tabby - A tiny tabswitcher plugin.",
+  "description": "Tabby - A tiny Tab Switcher plugin.",
   "main": "dist/tabby.js",
   "scripts": {
     "build-browser": "rollup -c scripts/iife.config.js",
