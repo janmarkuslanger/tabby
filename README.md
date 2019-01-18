@@ -13,9 +13,25 @@ Lightweight and simple Vanilla JS Tab Switcher Plugin
 
 ## Need help?
 
-If you need some help to get started of have an issue? Create an issue or write me jan-markus@gmx.de
+If you need some help to get started of have an issue?
+Create an issue or write me jan-markus@gmx.de
 
 ## Install
+
+### npm
+
+``` npm
+$ npm i tabsjs-lib
+```
+
+``` javascript
+
+const Tabby = require('tabs-lib');
+Tabby.init();
+
+```
+
+### script
 
 Install tabby is quit simple. Create the simple markup and include the script. Then you are ready to go!
 
