@@ -2,7 +2,7 @@
 
 Lightweight and simple Vanilla JS Tab Switcher Plugin
 
-<p align="center"><img width="150" src="assets/tabby.png" alt="Tab Switcher Demo"></p>
+<p align="center"><img width="550" src="assets/tabby.png" alt="Tab Switcher Demo"></p>
 
 ---
 
