@@ -10,6 +10,7 @@
     "build": "npm run build-browser && npm run build-node && npm run build-umd",
     "dev": "rollup -c scripts/iife.config.js -w"
   },
+  "keywords": "tab-switcher javascript",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/janmarkuslanger/tabsjs.git"
