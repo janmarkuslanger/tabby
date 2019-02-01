@@ -26,7 +26,7 @@ $ npm i tabsjs-lib
 
 ``` javascript
 
-const Tabby = require('tabs-lib');
+const Tabby = require('tabsjs-lib');
 Tabby.init();
 
 ```
