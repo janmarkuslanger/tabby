@@ -6,6 +6,7 @@ Lightweight and simple Vanilla JS Tab Switcher Plugin
 
 <p align="center">
     <img src="https://badge.fury.io/js/tabsjs-lib.svg" />
+    <a href="https://www.paypal.me/janmarkuslanger"><img src="https://img.shields.io/badge/donate-PayPal-green.svg" alt="Donate via PayPal"></a>
     <img src="https://img.shields.io/github/size/janmarkuslanger/tabby/dist/tabby.iife.js.svg">
 </p>
 
