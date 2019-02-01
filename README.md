@@ -48,6 +48,8 @@ data-tabby-content | content part that needs a value which links to the bar
 
 Here is a very simple markup
 
+<sub>The bar and content elements needs to be siblings</sub>
+
 ``` html
 <div data-tabby>
 
