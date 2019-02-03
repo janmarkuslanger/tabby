@@ -5,7 +5,7 @@
 */
 export const fadeOut = (element, cb) => {
   let opacity = 1;
-  const step = .05;
+  const step = 0.05;
 
   function run() {
     if (opacity > 0) {
@@ -18,7 +18,7 @@ export const fadeOut = (element, cb) => {
         cb(element);
       }
     }
-  };
+  }
 
   requestAnimationFrame(run);
 };
@@ -28,9 +28,9 @@ export const fadeOut = (element, cb) => {
 * @type {HTML Element} element
 * @type {Function} cb
 */
-export const fadeIn = (element,cb) => {
+export const fadeIn = (element, cb) => {
   let opacity = 0;
-  const step = .05;
+  const step = 0.05;
 
   function run() {
     if (opacity < 1) {
@@ -43,7 +43,7 @@ export const fadeIn = (element,cb) => {
         cb(element);
       }
     }
-  };
+  }
 
   requestAnimationFrame(run);
 };
