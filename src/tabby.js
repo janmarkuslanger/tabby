@@ -3,72 +3,72 @@ import { getSiblings, hide, show } from './helper';
 import { fadeOut, fadeIn } from './animations';
 
 export class Tabby {
+  constructor(container, options) {
+    this.container = container;
+    this.animation = options.animation || 'fade'; // 'fade'
+    this.index = 0;
+    this.items = [];
 
-    constructor(container, options) {
-        this.container = container;
-        this.animation = options.animation || 'fade'; // 'fade'
-        this.index = 0;
-        this.items = [];
+    this.initTabs();
+  }
 
-        this.initTabs();
+  doSwitch(index) {
+    const prevContent = this.items[this.index][1];
+    const nextContent = this.items[index][1];
+
+    const prevBar = this.items[this.index][0];
+    const nextBar = this.items[index][0];
+
+    if (!this.animation) {
+      hide(prevContent);
+      show(nextContent);
+      prevBar.removeAttribute(ATTRIBUTE_ACTIVE);
+      nextBar.setAttribute(ATTRIBUTE_ACTIVE, '');
+    } else {
+      fadeOut(prevContent, () => {
+        hide(prevContent);
+        show(nextContent);
+        fadeIn(nextContent);
+        prevBar.removeAttribute(ATTRIBUTE_ACTIVE);
+        nextBar.setAttribute(ATTRIBUTE_ACTIVE, '');
+      });
     }
 
-    doSwitch(index){
+    this.index = index;
+  }
 
-        const prevContent = this.items[this.index][1];
-        const nextContent = this.items[index][1];
+  /**
+  * init Tabs
+  *
+  */
+  initTabs() {
+    const bars = getSiblings(
+      this.container.querySelector(`[${ATTRIBUTE_BAR}]`),
+    );
 
-        const prevBar = this.items[this.index][0];
-        const nextBar = this.items[index][0];
+    const content = getSiblings(
+      this.container.querySelector(`[${ATTRIBUTE_CONTENT}]`),
+    );
 
-        if (!this.animation) {
-            hide(prevContent);
-            show(nextContent);
-            prevBar.removeAttribute(ATTRIBUTE_ACTIVE);
-            nextBar.setAttribute(ATTRIBUTE_ACTIVE, '');
-        } else {
-            fadeOut(prevContent, function(el) {
-                hide(prevContent);
-                show(nextContent);
-                fadeIn(nextContent);
-                prevBar.removeAttribute(ATTRIBUTE_ACTIVE);
-                nextBar.setAttribute(ATTRIBUTE_ACTIVE, '');
-            });
-        }
+    bars.forEach((bar, index) => {
+      const attr = bar.getAttribute(ATTRIBUTE_BAR);
+      const partner = content.filter(item => item.getAttribute(ATTRIBUTE_CONTENT) === attr)[0];
 
-        this.index = index;
-    }
+      if (index === 0) {
+        partner.style.display = 'block';
+        partner.style.opacity = '1';
+      } else {
+        partner.style.display = 'none';
+        partner.style.opacity = '0';
+      }
 
-    /**
-    * init Tabs
-    *
-    */
-    initTabs() {
-        const bars = getSiblings(
-            this.container.querySelector(`[${ATTRIBUTE_BAR}]`)
-        );
+      this.items.push([bar, partner]);
 
-        const content = getSiblings(
-            this.container.querySelector(`[${ATTRIBUTE_CONTENT}]`)
-        );
+      bar.addEventListener('click', () => {
+        this.doSwitch(index);
+      });
+    });
+  }
+}
 
-        bars.forEach((bar, index) => {
-            const attr = bar.getAttribute(ATTRIBUTE_BAR);
-            const partner = content.filter(item => item.getAttribute(ATTRIBUTE_CONTENT) === attr)[0];
-
-            if (index === 0) {
-                partner.style.display = 'block';
-                partner.style.opacity = '1';
-            } else {
-                partner.style.display = 'none';
-                partner.style.opacity = '0';
-            }
-
-            this.items.push([bar,partner]);
-
-            bar.addEventListener('click', () => {
-                this.doSwitch(index);
-            });
-        });
-    }
-};
+export { Tabby as default };

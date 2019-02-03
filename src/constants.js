@@ -1,20 +1,20 @@
 /**
-  * Active Tabs Attribute
-  *
-  * @type {String}
-  */
+* Active Tabs Attribute
+*
+* @type {String}
+*/
 export const ATTRIBUTE_ACTIVE = 'data-tabby-active';
 
 /**
-  * Bar Tabs Attribute
-  *
-  * @type {String}
-  */
+* Bar Tabs Attribute
+*
+* @type {String}
+*/
 export const ATTRIBUTE_BAR = 'data-tabby-bar';
 
 /**
-  * Content Tabs Attribute
-  *
-  * @type {String}
-  */
+* Content Tabs Attribute
+*
+* @type {String}
+*/
 export const ATTRIBUTE_CONTENT = 'data-tabby-content';

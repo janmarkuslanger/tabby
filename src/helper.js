@@ -1,10 +1,9 @@
 /**
-  * returns an array of next element siblings
-  *
-  * @param {HTMLElement}
-  *
-  * @return {Array}
-  */
+ * returns an array of next element siblings
+ *
+ * @param {HTMLElement}
+ * @return {Array}
+ */
 export const getSiblings = (element) => {
   const arrayContainer = [element];
 
@@ -24,15 +23,19 @@ export const getSiblings = (element) => {
 };
 
 /**
- * @type {HTML Element} element
- */
+* @param {HTML Element} element
+*/
 export const show = (element) => {
-    element.style.display = 'block';
-}
+  /* eslint-disable */
+  element.style.display = 'block';
+  /* eslint-enable */
+};
 
 /**
- * @type {HTML Element} element
- */
+* @param {HTML Element} element
+*/
 export const hide = (element) => {
-    element.style.display = 'none';
-}
+  /* eslint-disable */
+  element.style.display = 'none';
+  /* eslint-enable */
+};
