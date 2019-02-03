@@ -23,19 +23,17 @@ export const getSiblings = (element) => {
 };
 
 /**
-* @param {HTML Element} element
+* @param {HTML Element} el
 */
-export const show = (element) => {
-  /* eslint-disable */
+export const show = (el) => {
+  const element = el;
   element.style.display = 'block';
-  /* eslint-enable */
 };
 
 /**
-* @param {HTML Element} element
+* @param {HTML Element} el
 */
-export const hide = (element) => {
-  /* eslint-disable */
+export const hide = (el) => {
+  const element = el;
   element.style.display = 'none';
-  /* eslint-enable */
 };

@@ -1,9 +1,10 @@
 /**
 * fade out an element
-* @type {HTML Element} element
+* @type {HTML Element} el
 * @type {Function} cb
 */
-export const fadeOut = (element, cb) => {
+export const fadeOut = (el, cb) => {
+  const element = el;
   let opacity = 1;
   const step = 0.05;
 
@@ -25,10 +26,11 @@ export const fadeOut = (element, cb) => {
 
 /**
 * fade out an element
-* @type {HTML Element} element
+* @type {HTML Element} el
 * @type {Function} cb
 */
-export const fadeIn = (element, cb) => {
+export const fadeIn = (el, cb) => {
+  const element = el;
   let opacity = 0;
   const step = 0.05;
 
