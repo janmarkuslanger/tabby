@@ -5,7 +5,7 @@ import { fadeOut, fadeIn } from './animations';
 export class Tabby {
   constructor(container, options) {
     this.container = container;
-    this.animation = options.animation || 'fade'; // 'fade'
+    this.animation = options.animation;
     this.index = 0;
     this.items = [];
 
@@ -59,7 +59,10 @@ export class Tabby {
         partner.style.opacity = '1';
       } else {
         partner.style.display = 'none';
-        partner.style.opacity = '0';
+
+        if (this.animation) {
+          partner.style.opacity = '0';
+        }
       }
 
       this.items.push([bar, partner]);

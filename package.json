@@ -1,6 +1,6 @@
 {
   "name": "tabsjs-lib",
-  "version": "3.0.0-beta",
+  "version": "3.0.0-beta.1",
   "description": "Tabby - A tiny Tab Switcher plugin.",
   "main": "dist/tabby.umd.js",
   "scripts": {
