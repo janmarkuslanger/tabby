@@ -72,25 +72,44 @@ Here is a very simple markup
 
 ```
 
-## Example
+## Tabby
 
-## Animations
+#### Tabby.init **function**
+This method will initialize the tab components in the dom and will create an instance of the tabby class
+for each `[data-tabby]` element. It will return the objects in an array.
 
-By default tabby switches the tabs with a nice fade effect. If you do not like animations you need to init Tabby like this.
+#### Tabby.Tabby **class**
+This is our base class `Tabby`. Here you can create the instance by yourself.
 
-``` html
-<script>
-    Tabby.init({
-        animation: false
-    });
-</script>
+#### Tabby.version **string**
+Return the currenty used version number
+
+## Methods
+
+When you have created a few instances you can use some methods on them.
+
+``` javascript
+  // myTaby is an array which contains the objects
+  const myTabs = Tabby.init();
+
+  // lets just pick the first one
+  const myFirstTab = myTabs[0];
+
+  // now we can use the methods on them
 ```
 
-In the future we will have more animations.
+#### Methods next()
+Switches to the next element.
 
-animation | description
------|-----
-`false` | no animation
-`"fade"` | default
+``` javascript
+myFirstTab.next();
+```
+
+#### Methods previous()
+Switches to the previous element.
+
+``` javascript
+myFirstTab.previous();
+```
 
 ## <a href="https://janmarkuslanger.github.io/tabby/">Demo</a>
