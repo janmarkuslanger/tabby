@@ -42,6 +42,20 @@ export class Tabby {
   }
 
   /**
+   * switch to the next element
+   */
+  next() {
+    this.doSwitch(this.index + 1);
+  }
+
+  /**
+   * switch to the previous element
+   */
+  previous() {
+    this.doSwitch(this.index - 1);
+  }
+
+  /**
    * init Tabs
    */
   initTabs() {
