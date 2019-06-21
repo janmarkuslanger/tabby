@@ -73,7 +73,7 @@ export class Tabby {
    * @return {Boolean}
    */
   isOutRange(index) {
-    return index < 0 || (index > (this.items.length - 1))
+    return index < 0 || (index > (this.items.length - 1));
   }
 
   /**
