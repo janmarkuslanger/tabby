@@ -12,6 +12,10 @@ export class Tabby {
     this.initTabs();
   }
 
+  /**
+   * performs a switch to a given index
+   * @param {Number} index
+   */
   doSwitch(index) {
     const prevContent = this.items[this.index][1];
     const nextContent = this.items[index][1];
@@ -38,9 +42,8 @@ export class Tabby {
   }
 
   /**
-  * init Tabs
-  *
-  */
+   * init Tabs
+   */
   initTabs() {
     const bars = getSiblings(
       this.container.querySelector(`[${ATTRIBUTE_BAR}]`),
@@ -74,4 +77,4 @@ export class Tabby {
   }
 }
 
-export { Tabby as default };
+export default Tabby;
