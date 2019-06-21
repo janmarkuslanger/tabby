@@ -17,4 +17,4 @@ const init = (options = {}) => []
   .call(document.querySelectorAll('[data-tabby]'))
   .map(component => new Tabby(component, options));
 
-export { version, init };
+export { version, init, Tabby };
