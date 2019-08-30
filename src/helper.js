@@ -26,14 +26,12 @@ export const getSiblings = (element) => {
 * @param {HTML Element} el
 */
 export const show = (el) => {
-  const element = el;
-  element.style.display = 'block';
+  el.style.display = 'block';
 };
 
 /**
 * @param {HTML Element} el
 */
 export const hide = (el) => {
-  const element = el;
-  element.style.display = 'none';
+  el.style.display = 'none';
 };
