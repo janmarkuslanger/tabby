@@ -1,6 +1,5 @@
 /**
  * returns an array of next element siblings
- *
  * @param {HTMLElement}
  * @return {Array}
  */
@@ -22,15 +21,17 @@ export const getSiblings = (element) => {
 };
 
 /**
-* @param {HTML Element} el
-*/
+ * show element via html element
+ * @param {HTML Element} el
+ */
 export const show = (el) => {
   el.style.display = 'block';
 };
 
 /**
-* @param {HTML Element} el
-*/
+ * hide element via css
+ * @param {HTML Element} el
+ */
 export const hide = (el) => {
   el.style.display = 'none';
 };
