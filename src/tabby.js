@@ -95,6 +95,7 @@ export class Tabby {
       if (index === 0) {
         partner.style.display = 'block';
         partner.style.opacity = '1';
+        bar.setAttribute(ATTRIBUTE_ACTIVE, '');
       } else {
         partner.style.display = 'none';
 
