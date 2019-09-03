@@ -6,7 +6,6 @@
  */
 export const getSiblings = (element) => {
   const arrayContainer = [element];
-
   let nextElement = element.nextElementSibling;
 
   if (!nextElement) {
