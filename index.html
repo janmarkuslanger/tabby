@@ -96,6 +96,14 @@
           animation: 'fade'
       });
 
+      myTabs.forEach((tab, index) => {
+        if (index === 0) {
+          setTimeout(() => {
+            tab.destroy();
+          }, 3000);
+        }
+      });
+
     </script>
 
   </body>

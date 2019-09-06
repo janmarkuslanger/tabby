@@ -77,6 +77,17 @@ export class Tabby {
   }
 
   /**
+   * method to destroy the tabs
+   */
+  destroy() {
+    const bar = this.items[this.index][0];
+    const content = this.items[this.index][1];
+    hide(content);
+    bar.removeAttribute(ATTRIBUTE_ACTIVE);
+    content.removeAttribute(ATTRIBUTE_ACTIVE);
+  }
+
+  /**
    * init Tabs
    */
   initTabs() {
