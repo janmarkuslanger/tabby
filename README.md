@@ -13,7 +13,7 @@ Lightweight and simple Vanilla JS Tab Switcher Plugin
 
 ## Need help or you need a feature?
 
-If you need some help to get started of have an issue?
+If you need some help to get started or you have an issue?
 Create an issue or write me jan-markus@gmx.de
 
 ## Install
