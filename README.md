@@ -11,10 +11,6 @@ Lightweight and simple Vanilla JS Tab Switcher Plugin
 
 ---
 
-## Need help or you need a feature?
-
-If you need some help to get started or you have an issue?
-Create an issue or write me jan-markus@gmx.de
 
 ## Install
 
@@ -113,3 +109,18 @@ myFirstTab.previous();
 ```
 
 ## <a href="https://janmarkuslanger.github.io/tabby/">Demo</a>
+
+## Questions
+For questions and support will free to create an issue or write an email to
+janmarkuslanger10121994@gmail.com
+
+## Issues
+If you found a bug then please create an issue. It will help a lot.
+
+## Contribution
+Pull requests are always welcome. I am always happy to see others working on
+my GitHub projects.
+
+## Get in touch
+Write an email to janmarkuslanger10121994@gmail.com :)
+
