@@ -111,11 +111,11 @@ myFirstTab.previous();
 ## <a href="https://janmarkuslanger.github.io/tabby/">Demo</a>
 
 ## Questions
-For questions and support will free to create an issue or write an email to
+For questions and support feel free to create an issue or write an email to
 janmarkuslanger10121994@gmail.com
 
 ## Issues
-If you found a bug, then please create an issue. It will help a lot.
+If you found a bug, then please create an issue. It will help me a lot to make my work better. :)
 
 ## Contribution
 Pull requests are always welcome. I am always happy to see others working on
@@ -123,4 +123,5 @@ my GitHub projects.
 
 ## Get in touch
 Write an email to janmarkuslanger10121994@gmail.com :)
+
 
