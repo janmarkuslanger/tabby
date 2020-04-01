@@ -29,7 +29,7 @@ Tabby.init();
 
 ### script
 
-Install tabby is quit simple. Create the simple markup and include the script. Then you are ready to go!
+Install tabby is quite simple. Create simple markup and include the script. Then you are ready to go!
 
 ### Markup
 
@@ -42,7 +42,7 @@ data-tabby-bar | bar that needs a value which links to the content
 data-tabby-content | content part that needs a value which links to the bar
 
 
-Here is a very simple markup
+Here is a straightforward markup
 
 <sub>The bar and content elements needs to be siblings</sub>
 
@@ -75,14 +75,14 @@ This method will initialize the tab components in the dom and will create an ins
 for each `[data-tabby]` element. It will return the objects in an array.
 
 #### Tabby.Tabby **class**
-This is our base class `Tabby`. Here you can create the instance by yourself.
+Our base class, `Tabby`. Here you can create the instance by yourself.
 
 #### Tabby.version **string**
 Return the currenty used version number
 
 ## Methods
 
-When you have created a few instances you can use some methods on them.
+When you have created a few instances, you can use some methods on them.
 
 ``` javascript
   // myTaby is an array which contains the objects
@@ -115,7 +115,7 @@ For questions and support will free to create an issue or write an email to
 janmarkuslanger10121994@gmail.com
 
 ## Issues
-If you found a bug then please create an issue. It will help a lot.
+If you found a bug, then please create an issue. It will help a lot.
 
 ## Contribution
 Pull requests are always welcome. I am always happy to see others working on
