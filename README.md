@@ -2,7 +2,12 @@
 
 Lightweight and simple Vanilla JS Tab Switcher Plugin
 
-<p align="center"><img width="550" src="assets/tabby.png" alt="Tab Switcher Demo"></p>
+## Why tabby?
+- Easy to install
+- Entirely access to the tabby class 
+- Nested instances
+- Small in size
+- Fade animation out of the box
 
 <p align="center">
     <img src="https://badge.fury.io/js/tabsjs-lib.svg" />
